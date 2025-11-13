@@ -1,0 +1,22 @@
+services:
+  postgresql:
+    container_name: data-night13-postgres
+    image: postgres:18
+    environment:
+      POSTGRES_USER: postgres     # define credentials
+      POSTGRES_PASSWORD: password # define credentials
+      POSTGRES_DB: postgres       # define database
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data/docker-postgres/:/var/lib/postgresql/18/docker
+
+  grafana:
+    container_name: data-night13-grafana
+    image: grafana/grafana
+    user: root # deal with possible rights; login with admin / admin
+    ports:
+      - 127.0.0.1:3001:3000
+    volumes:
+      - ./grafana/:/var/lib/grafana
