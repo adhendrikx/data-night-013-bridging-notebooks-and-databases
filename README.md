@@ -22,10 +22,9 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 * run jupyter: `jupyter notebook`
 * open notebook *data-night-13-antenneregister*
 * spent some words on data set (https://antenneregister.nl/viewer/)
-* 
-
-
-
+* connect with containerized Grafana to containerized PostgreSQL database
+* **NB**: use IP address of PostgreSQL container as host in Grafana (not localhost)! 
+  * `docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' data-night13-postgres`
 
 
 * Default username / password Grafana Docker container: admin / admin

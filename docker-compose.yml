@@ -2,6 +2,8 @@ services:
   postgresql:
     container_name: data-night13-postgres
     image: postgres:18
+    networks:
+      - backend
     environment:
       POSTGRES_USER: postgres     # define credentials
       POSTGRES_PASSWORD: password # define credentials
@@ -15,8 +17,13 @@ services:
   grafana:
     container_name: data-night13-grafana
     image: grafana/grafana
+    networks:
+      - backend
     user: root # deal with possible rights; login with admin / admin
     ports:
       - 127.0.0.1:3001:3000
     volumes:
       - ./grafana/:/var/lib/grafana
+
+networks:
+  backend:
