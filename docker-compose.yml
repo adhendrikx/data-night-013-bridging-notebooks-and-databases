@@ -1,7 +1,7 @@
 services:
   postgresql:
     container_name: data-night13-postgres
-    image: postgres:18
+    image: postgis/postgis:18-3.6
     networks:
       - backend
     environment:
@@ -12,7 +12,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - ./data/docker-postgres/:/var/lib/postgresql/18/docker
+      - ./data/docker-postgres/:/var/lib/postgresql
 
   grafana:
     container_name: data-night13-grafana
