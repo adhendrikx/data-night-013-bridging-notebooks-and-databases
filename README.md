@@ -15,7 +15,7 @@ November 18 2025 | Ad Hendrikx
 * Run jupyter: `jupyter notebook`
 * Open notebook *data-night-13-antenneregister*
 * Spent some words on data set (https://antenneregister.nl/viewer/)
-* Connect with containerized Grafana to containerized PostgreSQL database
+* Connect with containerized Grafana (http://localhost:3001/) to containerized PostgreSQL database
 * **NB**: use IP address of PostgreSQL container as host in Grafana (not localhost)! 
   * `docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' data-night13-postgres`
 
