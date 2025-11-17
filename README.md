@@ -1,28 +1,21 @@
 # Data Night 13 - Bridging Notebooks and Databases
 
-
-
-## Getting started
-
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+November 18 2025 | Ad Hendrikx
 
 ## Playbook life demonstration
 
-* this demonstration is done on a Linux laptop (Docket, venv, Jupyter Notebook etc. can be installed on MS Windows / Max OS - this is out of scope of this demonstration - however if you're trying to set this up and encounter issues → contact me)
-* show docker compose file (more info about [docker](https://docs.docker.com/get-started/) and [docker compose](https://docs.docker.com/compose/gettingstarted/))
+* this demonstration is done on a Linux laptop (Docker, venv, Jupyter Notebook etc. can be installed on MS Windows / Max OS - however this is out of scope of this demonstration)
+* Docker compose file (more info about [docker](https://docs.docker.com/get-started/) and [docker compose](https://docs.docker.com/compose/gettingstarted/))
 * Start: `docker compose up` (stop: `docker compose down`)
 * Elaborate on PostgreSQL  and Grafana containers
-* access database with `psql`: `psql -h localhost -U postgress -d postgres`
+* Access database with `psql`: `psql -h localhost -U postgress -d postgres`
 * (psql) `\dn` for schema overview
 * Create Python virtual environment: `python3 -m venv ./venv`
-* activate virtual environment: `source venv/bin/activate` (deactivate: `deactiva`te)
-* install jupyter notebook: `pip install jupyter`
-* run jupyter: `jupyter notebook`
-* open notebook *data-night-13-antenneregister*
-* spent some words on data set (https://antenneregister.nl/viewer/)
-* connect with containerized Grafana to containerized PostgreSQL database
+* Activate virtual environment: `source venv/bin/activate` (deactivate: `deactiva`te) and install jupyter notebook: `pip install jupyter`
+* Run jupyter: `jupyter notebook`
+* Open notebook *data-night-13-antenneregister*
+* Spent some words on data set (https://antenneregister.nl/viewer/)
+* Connect with containerized Grafana to containerized PostgreSQL database
 * **NB**: use IP address of PostgreSQL container as host in Grafana (not localhost)! 
   * `docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' data-night13-postgres`
 
